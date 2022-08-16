@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: argo-application
+  name: myapp-argo-application
   namespace: argocd
 spec:
   project: default
@@ -11,8 +11,8 @@ spec:
     targetRevision: HEAD
     path: dev
   destination: 
-    server: https://kubernetes.default.svc # endpoint for the cluster
-    namespace: myapp # new namespace for the application
+    server: https://kubernetes.default.svc
+    namespace: myapp
 
   syncPolicy:
     syncOptions:
